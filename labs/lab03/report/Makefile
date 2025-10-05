@@ -1,8 +1,10 @@
 all:
-	-@quarto render
+	pandoc report.md -o report.pdf --pdf-engine=xelatex
+	pandoc report.md -o report.docx
 
 clean:
-	-rm -rf _output
+	rm -f report.pdf report.docx
 
 cleanall: clean
-	-rm -rf .quarto
+	rm -rf _output
+
